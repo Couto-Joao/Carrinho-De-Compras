@@ -6,6 +6,14 @@ function adicionar() {
   let nomeProduto = produtos.split('-')[0];
   let valorProduto = produtos.split('R$')[1];
   let quantidadeProduto = document.getElementById('quantidade').value;
+
+  //validação da quantidade de produto
+  if(quantidadeProduto >= 101) {
+    alert('Erro! O máximo de produtos é 100.');
+    document.getElementById('quantidade').value = '';
+    return;
+  }
+  
   //Cálculo do subtotal
   let subtotal = (quantidadeProduto * valorProduto);
     
